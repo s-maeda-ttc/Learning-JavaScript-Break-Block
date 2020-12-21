@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gamedev Canvas Workshop</title>
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { background:#eee; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="480" height="320"></canvas>
+
+<a href="https://developer.mozilla.org/ja/docs/Games/Workflows/2D_Breakout_game_pure_JavaScript/Move_the_ball" target="_blank">ボールを動かす</a>
+
+<script>
+    // JavaScriptのコードがここに入ります
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.rect(20,40,50,50);  //rect(x座標,y座標,width,height)
+    ctx.fillStyle = "#FF0000";
+    ctx.fill();
+    ctx.closePath();
+
+    var round = canvas.getContext("2d");
+    round.beginPath();
+    round.arc(240,160,20,0,Math.PI*2, false);   //arc.(x座標,y座標,円の半径,開始角度,終了角度,描く方向(時計回り:false,反時計周り:true))
+    round.fillStyle="white";
+    round.strokeStyle="rgba(0, 0, 255, 0.5)";
+    round.stroke();
+    round.fill();
+    round.closePath();
+</script>
+
+</body>
+</html>

@@ -5,15 +5,23 @@
         <title>クラス修正版ブロック崩し</title>
         <style>
             * { padding: 0; margin: 0; }
-            canvas { background:#eee; display: block; margin: 0 auto; }
+            canvas { background:#eee; display: block; margin: 0 auto 20px; }
+            #start-button { display: block; margin-left: auto; margin-right: auto;
+                            width: 120px; height: 35px;
+                            color:#fff; background-color: #0095DD;
+                            border:none; border-bottom: 5px solid #0270a6;}
+            
+            #start-button:hover{
+                border-bottom: 2px solid #0270a6;
+            }
         </style>
     </head>
     <body>
 
         <canvas id="myCanvas"></canvas>
+        <input id="start-button" type="button" onclick="startLoop()" value="スタートボタン" />
         <div style="display: flex;">
             <a href="https://developer.mozilla.org/ja/docs/Games/Workflows/2D_Breakout_game_pure_JavaScript/Move_the_ball" target="_blank">ボールを動かす</a>
-            <input type="button" onclick="startLoop()" value="スタートボタン"></input>
         </div>
 
         <script type="text/javascript" src="js/canvasElement.js"></script>

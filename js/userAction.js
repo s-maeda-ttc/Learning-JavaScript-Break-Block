@@ -64,3 +64,12 @@ var userAcrionHandler = function(){
         getLeftPressed: getLeftPressed,
     }
 }
+
+function gameStart(e){
+    if(e.key = " "){
+        document.getElementById("start-button").click();
+        document.removeEventListener("keydown", gameStart, false)
+    }
+}
+
+document.addEventListener("keydown", gameStart, false);

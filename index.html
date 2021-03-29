@@ -1,44 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <title>Gamedev Canvas Workshop</title>
-    <style>
-    	* { padding: 0; margin: 0; }
-    	canvas { background:#eee; display: block; margin: 0 auto; }
-    </style>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8" />
+        <title>クラス修正版ブロック崩し</title>
+        <style>
+            * { padding: 0; margin: 0; }
+            canvas { background:#eee; display: block; margin: 0 auto; }
+        </style>
+    </head>
+    <body>
 
-<canvas id="myCanvas" width="480" height="320"></canvas>
+        <canvas id="myCanvas"></canvas>
+        <div style="display: flex;">
+            <a href="https://developer.mozilla.org/ja/docs/Games/Workflows/2D_Breakout_game_pure_JavaScript/Move_the_ball" target="_blank">ボールを動かす</a>
+            <input type="button" onclick="startLoop()" value="スタートボタン"></input>
+        </div>
 
-<a href="https://developer.mozilla.org/ja/docs/Games/Workflows/2D_Breakout_game_pure_JavaScript/Move_the_ball" target="_blank">ボールを動かす</a>
-
-<script>
-    // JavaScriptのコードがここに入ります
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-    var x = canvas.width/2;
-    var y = canvas.height-30;
-    var dx = 2;
-    var dy = -2;
-
-    function drawBall(){
-        ctx.beginPath();
-        ctx.arc(x, y, 10, 0, Math.PI*2);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
-        ctx.closePath();
-    }
-
-    function draw(){
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawBall();
-        x += dx;
-        y += dy;
-    }
-    setInterval(draw, 10);
-</script>
-
-</body>
+        <script type="text/javascript" src="js/canvasElement.js"></script>
+        <script type="text/javascript" src="js/playerInfo.js"></script>
+        <script type="text/javascript" src="js/ball.js"></script>
+        <script type="text/javascript" src="js/paddle.js"></script>
+        <script type="text/javascript" src="js/brick.js"></script>
+        <script type="text/javascript" src="js/collision.js"></script>
+        <script type="text/javascript" src="js/userAction.js"></script>
+        <script type="text/javascript" src="js/draw.js"></script>
+    </body>
 </html>
